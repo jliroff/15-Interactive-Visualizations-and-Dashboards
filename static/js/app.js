@@ -6,12 +6,12 @@ function buildMetadata(sample) {
 
   d3.json(metaDataUrl).then(function(sample) {
 
-    var sampleData = d3.select('sample-metadata')
+    var sampleData = d3.select('#sample-metadata')
 
     sampleData.html("");
 
     Object.entries(sample).forEach(function([key,value]){
-        var row = sampleData.append("tr");
+        var row = sampleData.append("p");
         console.log(key,value);
         row.text(`${key}:${value}`);
 
